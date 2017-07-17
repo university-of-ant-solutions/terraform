@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# https://hub.docker.com/r/hashicorp/terraform/
+
+source ./utils/constant.sh
+TRF_WORKING_DIR=example
+
+docker run \
+  -v $PWD/data:/data \
+  -v $PWD/secret.tfvars:/secret.tfvars \
+  -w /data/$TRF_WORKING_DIR \
+  -i -t \
+  hashicorp/terraform:light "${@}" -var-file="/secret.tfvars"
