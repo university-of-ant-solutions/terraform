@@ -3,7 +3,7 @@
 # https://hub.docker.com/r/hashicorp/terraform/
 
 source ./utils/constant.sh
-TRF_WORKING_DIR=example
+TRF_WORKING_DIR=vpc
 
 docker run \
   -v $PWD/data:/data \
